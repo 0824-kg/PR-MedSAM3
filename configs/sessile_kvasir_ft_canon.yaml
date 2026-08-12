@@ -1,0 +1,71 @@
+# LoRA fine-tuning config for sessile-Kvasir - FT-Canon
+
+model:
+  name: "facebook/sam3"
+  cache_dir: null
+  checkpoint_path: "checkpoints/sam3.pt"
+  load_from_hf: false
+
+lora:
+  rank: 16
+  alpha: 32
+  dropout: 0.1
+  target_modules:
+    - "q_proj"
+    - "k_proj"
+    - "v_proj"
+    - "out_proj"
+  apply_to_vision_encoder: false
+  apply_to_text_encoder: true
+  apply_to_geometry_encoder: false
+  apply_to_detr_encoder: true
+  apply_to_detr_decoder: true
+  apply_to_mask_decoder: true
+
+training:
+  data_dir: "/root/shared-nvme/prepared_datasets/sessile-Kvasir"
+  batch_size: 1
+  num_workers: 2
+  method_variant: "ft_canon"
+  enable_prompt_pair_sampling: false
+  lambda_group: 0.0
+  lambda_canon: 0.0
+  learning_rate: 1e-4
+  weight_decay: 0.01
+  adam_beta1: 0.9
+  adam_beta2: 0.999
+  adam_epsilon: 1e-8
+  max_grad_norm: 1.0
+  num_epochs: 20
+  warmup_steps: 200
+  lr_scheduler: "cosine"
+  logging_steps: 10
+  eval_steps: 100
+  save_steps: 100
+  save_total_limit: 5
+  mixed_precision: "bf16"
+  seed: 42
+  gradient_accumulation_steps: 8
+
+prompts:
+  enabled: true
+  config_path: "prompts.yaml"
+  dataset_key: "sessile_kvasir"
+
+output:
+  output_dir: "outputs/sessile_kvasir_ft_canon"
+  logging_dir: "logs"
+  save_lora_only: true
+  push_to_hub: false
+  hub_model_id: null
+  pretrained_lora_weights: "checkpoints/best_lora_weights.pt"
+
+evaluation:
+  metric: "iou"
+  save_predictions: false
+  compute_metrics_during_training: true
+
+hardware:
+  device: "cuda"
+  dataloader_pin_memory: true
+  use_compile: false
