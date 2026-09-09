@@ -489,7 +489,9 @@ The source code is publicly available at:
 
 https://github.com/0824-kg/PR-MedSAM3
 
-A version-specific Zenodo DOI should be added here after the PeerJ submission release has been archived.
+The version corresponding to the PeerJ submission has been archived at Zenodo:
+
+https://doi.org/10.5281/zenodo.22673947
 
 ---
 
