@@ -1,0 +1,43 @@
+normalization:
+  lowercase: true
+  strip: true
+  collapse_whitespace: true
+  replace_underscores_with_space: true
+  replace_hyphens_with_space: false
+
+datasets:
+  BUSI:
+    valid:
+      - "breast tumor"
+    cross_concept:
+      - "sessile polyp"
+      - "skin lesion"
+    irrelevant:
+      - "background tissue"
+      - "normal region"
+      - "medical image"
+      - "anatomical structure"
+
+  sessile-Kvasir:
+    valid:
+      - "sessile polyp"
+    cross_concept:
+      - "breast tumor"
+      - "skin lesion"
+    irrelevant:
+      - "background tissue"
+      - "normal mucosa"
+      - "medical image"
+      - "anatomical structure"
+
+  ISIC2018:
+    valid:
+      - "skin lesion"
+    cross_concept:
+      - "breast tumor"
+      - "sessile polyp"
+    irrelevant:
+      - "background tissue"
+      - "normal skin"
+      - "medical image"
+      - "anatomical structure"

@@ -1,0 +1,52 @@
+normalization:
+  lowercase: true
+  strip: true
+  collapse_whitespace: true
+  replace_underscores_with_space: true
+  replace_hyphens_with_space: false
+
+datasets:
+  BUSI:
+    canonical: "breast tumor"
+    heldout_synonyms:
+      - "breast neoplasm"
+      - "mammary mass"
+      - "mammary lesion"
+    heldout_lexical:
+      - "breast tumour"
+      - "tumour of the breast"
+      - "breast tumor area"
+    heldout_descriptive:
+      - "sonographic breast mass"
+      - "ultrasound-visible breast lesion"
+      - "focal breast lesion on ultrasound"
+
+  sessile-Kvasir:
+    canonical: "sessile polyp"
+    heldout_synonyms:
+      - "colonic polyp"
+      - "gastrointestinal polyp"
+      - "polypoid lesion"
+    heldout_lexical:
+      - "the polyp"
+      - "sessile-polyp area"
+      - "polyp region on endoscopy"
+    heldout_descriptive:
+      - "sessile colorectal growth"
+      - "protruding mucosal lesion"
+      - "endoscopically visible polypoid region"
+
+  ISIC2018:
+    canonical: "skin lesion"
+    heldout_synonyms:
+      - "cutaneous abnormality"
+      - "dermal lesion"
+      - "pigmented skin lesion"
+    heldout_lexical:
+      - "skin-lesion area"
+      - "the cutaneous lesion"
+      - "lesion of the skin"
+    heldout_descriptive:
+      - "lesion visible on dermoscopy"
+      - "localized pigmented skin region"
+      - "dermoscopic cutaneous lesion"
