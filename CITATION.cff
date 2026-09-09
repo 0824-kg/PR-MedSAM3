@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+title: "PR-MedSAM3: Reliability-Aware Concept and Mask Stabilization for Prompt-Robust Text-Guided Medical Image Segmentation"
+version: 1.0.0
+type: software
+message: "If you use this software, please cite the corresponding PR-MedSAM3 manuscript."
+authors:
+  - given-names: Yanyan
+    family-names: Mao
+    affiliation: Shandong Technology and Business University
+  - given-names: Ruiting
+    family-names: Yang
+    affiliation: Shandong Technology and Business University
+  - given-names: Dapeng
+    family-names: Cheng
+    affiliation: Shandong Technology and Business University
+keywords:
+  - medical image segmentation
+  - text-guided segmentation
+  - prompt robustness
+  - SAM3
+  - MedSAM3
+  - medical imaging
